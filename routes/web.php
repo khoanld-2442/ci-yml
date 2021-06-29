@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/demo', function () {
-    echo 123;
+    echo 1234;
 });
