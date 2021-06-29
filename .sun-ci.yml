@@ -49,26 +49,26 @@ jobs:
   script:
   - php vendor/bin/phpunit
 
-  - name: python
-    image: khoanld98/sun_ci_django
-    stage: build
-    script:
-    - python -v
+- name: python
+  image: khoanld98/sun_ci_django
+  stage: build
+  script:
+  - python -v
 
-  - name: php
-    image: sunasteriskrnd/php-workspace:7.4
-    stage: build
-    script:
-      - php -v
+- name: php
+  image: sunasteriskrnd/php-workspace:7.4
+  stage: build
+  script:
+    - php -v
 
-  - name: node
-    image: node:14-alpine
-    stage: build
-    script:
-      - npm install
+- name: node
+  image: node:14-alpine
+  stage: build
+  script:
+    - npm install
 
-  - name: java
-    image: openjdk:16-alpine3.13
-    stage: build
-    script:
-      - java --version
+- name: java
+  image: openjdk:16-alpine3.13
+  stage: build
+  script:
+    - java --version
