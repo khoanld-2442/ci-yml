@@ -3,7 +3,7 @@ stages:
 jobs:
   - name: build
     stage: build
-    use: PHPTest@1.0.0
+    use: PHPTTest@1.0.0
     with:
       privateKey: test
       hostIP: 123
