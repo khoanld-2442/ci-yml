@@ -1,45 +1,10 @@
-workspace: shared
-
 stages:
   - build
-  - test
-
 jobs:
-- name: build
-  stage: build
-  image: sunasteriskrnd/php-workspace:7.4
-  script:
-  - composer install
-  after_script:
-  - echo "Finish job"
-
-- name: test:node
-  stage: test
-  image: node:12-alpine
-  script:
-  - yarn
-
-- name: python
-  image: khoanld98/sun_ci_django
-  stage: build
-  script:
-  - python -v
-
-- name: php
-  image: sunasteriskrnd/php-workspace:7.4
-  stage: build
-  script:
-    - php -v 
-
-- name: node
-  image: node:14-alpine
-  stage: build
-  script:
-    - npm install
-  when: manual  
-
-- name: java
-  image: openjdk:16-alpine3.13
-  stage: build
-  script:
-    - java --version
+  - name: build
+    stage: build
+    use: PHPTest@1.0.0
+    with:
+      privateKey: test
+      hostIP: 123
+      afterScript: 123
